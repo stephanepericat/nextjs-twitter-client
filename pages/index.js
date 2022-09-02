@@ -2,7 +2,7 @@ import { signIn, signOut, useSession } from "next-auth/react"
 import { AUTHENTICATED, LOADING, UNAUTHENTICATED } from "../assets/constants/auth-statuses"
 
 import Head from "next/head"
-import { Button } from "antd"
+import { Button, Spin } from "antd"
 
 import styles from '../styles/Home.module.scss'
 
@@ -18,9 +18,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        { status === LOADING && <p>loading...</p>}
-        { status === AUTHENTICATED && <Button onClick={() => signOut()}>Sign Out</Button> }
-        { status === UNAUTHENTICATED && <Button onClick={() => signIn()}>Sign In</Button> }
+        { status === LOADING && <Spin className={styles.centered} />}
+        { status === AUTHENTICATED && <Button className={styles.centered} onClick={() => signOut()}>Sign Out</Button> }
+        { status === UNAUTHENTICATED && <Button className={styles.centered} onClick={() => signIn()}>Sign In</Button> }
       </main>
     </div>
   )
