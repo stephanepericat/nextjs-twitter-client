@@ -8,7 +8,7 @@ import {
 } from "../assets/constants/auth-statuses";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const story = {
   title: "Example/SignInOut",
   component: SignInOut,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
@@ -16,6 +16,8 @@ export default {
     status: { control: "select", options: { AUTHENTICATED, UNAUTHENTICATED } },
   },
 };
+
+export default story;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <SignInOut {...args} />;

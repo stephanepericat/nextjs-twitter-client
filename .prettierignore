@@ -1,3 +1,7 @@
 .next
 coverage
 stories
+yarn.lock
+.prettierignore
+.gitignore
+.git
