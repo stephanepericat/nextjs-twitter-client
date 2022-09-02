@@ -1,6 +1,8 @@
+import PropTypes from 'prop-types'
+
 import Head from "next/head"
 
-export default ({ title, description }) => {
+const PageHead = ({ title, description }) => {
   return (
     <Head>
       <title>{ title }</title>
@@ -9,3 +11,10 @@ export default ({ title, description }) => {
     </Head>
   )
 }
+
+PageHead.propTypes = {
+  description: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+}
+
+export default PageHead

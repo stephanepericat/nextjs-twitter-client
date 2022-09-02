@@ -1,8 +1,9 @@
-import { signIn, signOut, useSession } from "next-auth/react"
-import { AUTHENTICATED, LOADING, UNAUTHENTICATED } from "../assets/constants/auth-statuses"
+import { useSession } from "next-auth/react"
+import { LOADING } from "../assets/constants/auth-statuses"
 
 import PageHead from "../components/PageHead"
-import { Button, Spin } from "antd"
+import SignInOut from "../components/SignInOut"
+import { Spin } from "antd"
 
 import { useTranslation } from 'react-i18next'
 
@@ -18,8 +19,7 @@ export default function Home() {
 
       <main className={styles.main}>
         { status === LOADING && <Spin className={styles.centered} />}
-        { status === AUTHENTICATED && <Button className={styles.centered} onClick={() => signOut()}>{ t('signOut') }</Button> }
-        { status === UNAUTHENTICATED && <Button className={styles.centered} onClick={() => signIn()}>{ t('signIn') }</Button> }
+        { status !== LOADING && <SignInOut className={styles.centered} status={status}  />}
       </main>
     </div>
   )
