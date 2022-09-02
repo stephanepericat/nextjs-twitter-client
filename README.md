@@ -1,3 +1,11 @@
+# nextjs-twitter-client
+
+A Twitter client built with Nuxt.js, Ant Design and the Twitter API.
+
+## Demo
+
+[https://nextjs-twitter-client.vercel.app/](https://nextjs-twitter-client.vercel.app/)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
