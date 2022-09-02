@@ -1,17 +1,17 @@
-import NextAuth from "next-auth"
-import TwitterProvider from "next-auth/providers/twitter"
+import NextAuth from "next-auth";
+import TwitterProvider from "next-auth/providers/twitter";
 
-export default NextAuth({ 
+export default NextAuth({
   providers: [
     TwitterProvider({
       clientId: process.env.TWITTER_ID,
       clientSecret: process.env.TWITTER_SECRET,
-      version: "2.0"
-    })
+      version: "2.0",
+    }),
   ],
   callbacks: {
     // async session({ session, token, user }) {
     //   return session
     // }
-  }
-})
+  },
+});

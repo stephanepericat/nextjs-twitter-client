@@ -13,6 +13,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
+    "prettier": "prettier --write .",
     "storybook": "start-storybook -p 6006",
     "test": "jest",
     "test-coverage": "open ./coverage/lcov-report/index.html"
@@ -50,6 +51,7 @@
     "jest": "28.1.0",
     "jest-environment-jsdom": "28.1.0",
     "jest-extended": "^3.1.0",
+    "prettier": "2.7.1",
     "sass": "^1.54.8"
   }
 }

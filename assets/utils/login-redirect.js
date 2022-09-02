@@ -1,9 +1,9 @@
-import { UNAUTHENTICATED } from "../constants/auth-statuses"
+import { UNAUTHENTICATED } from "../constants/auth-statuses";
 
 export default function loginRedirect(status) {
-  const notAuthenticated = status === UNAUTHENTICATED
+  const notAuthenticated = status === UNAUTHENTICATED;
 
-  if(notAuthenticated) {
-    window.location = "/api/auth/signin"
+  if (notAuthenticated) {
+    window.location = "/api/auth/signin";
   }
 }

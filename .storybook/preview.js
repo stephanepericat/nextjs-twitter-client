@@ -1,7 +1,7 @@
 // import "../i18n"
 
-import "antd/dist/antd.dark.min.css"
-import "../styles/globals.scss"
+import "antd/dist/antd.dark.min.css";
+import "../styles/globals.scss";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -11,4 +11,4 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};

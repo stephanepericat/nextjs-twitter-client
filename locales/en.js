@@ -4,7 +4,7 @@ export default {
     signIn: "Sign In",
     signOut: "Sign Out",
     title: {
-      default: "Next.js Twitter Client"
-    }
-  }
-}
+      default: "Next.js Twitter Client",
+    },
+  },
+};
