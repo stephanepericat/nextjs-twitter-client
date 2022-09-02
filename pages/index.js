@@ -5,6 +5,8 @@ import PageHead from "../components/PageHead"
 import SignInOut from "../components/SignInOut"
 import { Spin } from "antd"
 
+import { signIn, signOut } from 'next-auth/react'
+
 import { useTranslation } from 'react-i18next'
 
 import styles from '../styles/Home.module.scss'
@@ -15,11 +17,20 @@ export default function Home() {
 
   return (
     <div>
-      <PageHead title={ t('title.default') } description={ t('appDescription') } />
+      <PageHead title={t('title.default')} description={t('appDescription')} />
 
       <main className={styles.main}>
         { status === LOADING && <Spin className={styles.centered} />}
-        { status !== LOADING && <SignInOut className={styles.centered} status={status}  />}
+        { status !== LOADING && (
+          <SignInOut
+            className={styles.centered}
+            onSignIn={signIn}
+            onSignOut={signOut}
+            signInLabel={t('signIn')}
+            signOutLabel={t('signOut')}
+            status={status}
+          />
+        )}
       </main>
     </div>
   )

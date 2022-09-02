@@ -1,4 +1,4 @@
-import "../i18n"
+// import "../i18n"
 
 import "antd/dist/antd.dark.min.css"
 import "../styles/globals.scss"

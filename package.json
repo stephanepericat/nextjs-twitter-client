@@ -1,14 +1,20 @@
 {
-  "name": "twitter-client",
+  "name": "nextjs-twitter-client",
+  "author": {
+    "name": "Stephane P. Pericat",
+    "email": "shortwavaudio@gmail.com"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build-storybook": "build-storybook",
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "jest",
+    "test-coverage": "open ./coverage/lcov-report/index.html"
   },
   "dependencies": {
     "antd": "^4.22.8",
@@ -31,9 +37,15 @@
     "@storybook/manager-webpack5": "^6.5.10",
     "@storybook/react": "^6.5.10",
     "@storybook/testing-library": "^0.0.13",
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "13.2.0",
+    "@testing-library/user-event": "14.2.0",
     "babel-loader": "^8.2.5",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
+    "jest": "28.1.0",
+    "jest-environment-jsdom": "28.1.0",
+    "jest-extended": "^3.1.0",
     "sass": "^1.54.8"
   }
 }

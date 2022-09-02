@@ -1,23 +1,24 @@
 import PropTypes from 'prop-types'
-import { useTranslation } from 'react-i18next'
 
 import { AUTHENTICATED } from '../assets/constants/auth-statuses'
 
 import { Button } from "antd"
-import { signIn, signOut } from 'next-auth/react'
 
-const SignInOut = ({ className, status }) => {
-  const { t } = useTranslation()
+const SignInOut = ({ className, onSignIn, onSignOut, signInLabel, signOutLabel, status }) => {
   const isAuthenticated = status === AUTHENTICATED
 
   return (
-    <Button className={className} onClick={ () => isAuthenticated ? signOut() : signIn() }>
-      { isAuthenticated ? t('signOut') : t('signIn') }
+    <Button className={className} onClick={ () => isAuthenticated ? onSignOut() : onSignIn() }>
+      { isAuthenticated ? signOutLabel : signInLabel }
     </Button>
   )
 }
 
 SignInOut.propTypes = {
+  onSignIn: PropTypes.func.isRequired,
+  onSignOut: PropTypes.func.isRequired,
+  signInLabel: PropTypes.string.isRequired,
+  signOutLabel: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
 }
 
