@@ -1,7 +1,7 @@
 import { signIn, signOut, useSession } from "next-auth/react"
 import { AUTHENTICATED, LOADING, UNAUTHENTICATED } from "../assets/constants/auth-statuses"
 
-import Head from "next/head"
+import PageHead from "../components/PageHead"
 import { Button, Spin } from "antd"
 
 import { useTranslation } from 'react-i18next'
@@ -14,11 +14,7 @@ export default function Home() {
 
   return (
     <div>
-      <Head>
-        <title>Next.js Twitter Client</title>
-        <meta name="description" content="A Twitter web client built with Next.js and Ant Design" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <PageHead title={ t('title.default') } description={ t('appDescription') } />
 
       <main className={styles.main}>
         { status === LOADING && <Spin className={styles.centered} />}
