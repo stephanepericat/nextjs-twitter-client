@@ -12,6 +12,7 @@
     "build-storybook": "build-storybook",
     "start": "next start",
     "lint": "next lint",
+    "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
     "test": "jest",
     "test-coverage": "open ./coverage/lcov-report/index.html"
@@ -28,6 +29,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@storybook/addon-a11y": "^6.5.10",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-essentials": "^6.5.10",
@@ -43,6 +46,7 @@
     "babel-loader": "^8.2.5",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
+    "husky": "^8.0.1",
     "jest": "28.1.0",
     "jest-environment-jsdom": "28.1.0",
     "jest-extended": "^3.1.0",
