@@ -1,6 +1,6 @@
 import { SessionProvider } from "next-auth/react"
 
-import "antd/dist/antd.css"
+import "antd/dist/antd.dark.min.css"
 import "../styles/globals.css"
 
 function MyApp({
