@@ -1,6 +1,6 @@
 # nextjs-twitter-client
 
-A Twitter client built with Nuxt.js, Ant Design and the Twitter API.
+A Twitter client built with Next.js, Ant Design and the Twitter API.
 
 ## Demo
 
