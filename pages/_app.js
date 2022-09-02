@@ -1,7 +1,7 @@
 import { SessionProvider } from "next-auth/react"
 
 import "antd/dist/antd.dark.min.css"
-import "../styles/globals.css"
+import "../styles/globals.scss"
 
 function MyApp({
   Component,
