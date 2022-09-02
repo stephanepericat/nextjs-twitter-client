@@ -1,5 +1,7 @@
 import { SessionProvider } from "next-auth/react"
 
+import "../i18n"
+
 import "antd/dist/antd.dark.min.css"
 import "../styles/globals.scss"
 
