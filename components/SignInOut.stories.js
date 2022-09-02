@@ -10,7 +10,7 @@ export default {
   component: SignInOut,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    status: { control: 'select', options: { AUTHENTICATED, UNAUTHENTICATED } },
+    status: { control: 'select', options: { AUTHENTICATED, UNAUTHENTICATED } }
   },
 }
 
@@ -20,5 +20,7 @@ const Template = (args) => <SignInOut {...args} />
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
+  signInLabel: 'Sign In',
+  signOutLabel: 'Sign Out',
   status: AUTHENTICATED
 }
