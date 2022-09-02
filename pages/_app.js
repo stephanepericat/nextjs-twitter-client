@@ -1,5 +1,7 @@
 import { SessionProvider } from "next-auth/react"
-import '../styles/globals.css'
+
+import "antd/dist/antd.css"
+import "../styles/globals.css"
 
 function MyApp({
   Component,
