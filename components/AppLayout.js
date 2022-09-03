@@ -1,14 +1,27 @@
-import { Layout } from "antd";
+import { Spin } from "antd";
+import { TwitterOutlined } from "@ant-design/icons";
 
-// import styles from "../styles/AppLayout.module.scss";
+import { LOADING } from "../assets/constants/auth-statuses";
 
-const { Content, Header } = Layout;
+import styles from "../styles/AppLayout.module.scss";
+
+import { useSession } from "next-auth/react";
 
 export default function AppLayout({ children }) {
+  const { status } = useSession();
+
   return (
-    <Layout>
-      <Header>Header</Header>
-      <Content>{children}</Content>
-    </Layout>
+    <div className={styles.layout}>
+      {status === LOADING && <Spin className={styles.loader} />}
+      {status !== LOADING && (
+        <div className={styles.container}>
+          <header className={styles.left}>
+            <TwitterOutlined className={styles.logo} />
+          </header>
+          <main className={styles.main}>{children}</main>
+          <aside className={styles.right}>right</aside>
+        </div>
+      )}
+    </div>
   );
 }

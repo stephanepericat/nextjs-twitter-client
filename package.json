@@ -19,6 +19,7 @@
     "test-coverage": "open ./coverage/lcov-report/index.html"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "antd": "^4.22.8",
     "i18next": "^21.9.1",
     "next": "12.2.5",
@@ -45,6 +46,7 @@
     "@testing-library/react": "13.2.0",
     "@testing-library/user-event": "14.2.0",
     "babel-loader": "^8.2.5",
+    "consola": "^2.15.3",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
     "husky": "^8.0.1",

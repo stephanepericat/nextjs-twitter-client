@@ -1,4 +1,37 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.loader {
+  margin: auto;
+}
+
+.logo {
+  font-size: 31px;
+  margin: 12px 0;
+}
+
 .container {
+  display: flex;
+  height: 100%;
   margin: 0 auto;
-  width: 1200px;
+  overflow: hidden;
+  width: 1220px;
+}
+
+.left {
+  width: 20%;
+}
+
+.main {
+  width: 50%;
+  border: 1px solid #2f3336;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.right {
+  width: 30%;
 }
