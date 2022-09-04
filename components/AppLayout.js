@@ -10,7 +10,7 @@ import { useSession } from "next-auth/react";
 import { useTranslation } from "react-i18next";
 import { useAppLayout } from "../assets/hooks/useAppLayout";
 
-export default function AppLayout({ children }) {
+const AppLayout = ({ children }) => {
   const { status } = useSession();
   const { t } = useTranslation();
   const { onMoreClick, onTweetButtonClick } = useAppLayout();
@@ -39,4 +39,6 @@ export default function AppLayout({ children }) {
       )}
     </div>
   );
-}
+};
+
+export default AppLayout;
