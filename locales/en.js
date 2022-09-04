@@ -12,5 +12,6 @@ export default {
     title: {
       default: "Next.js Twitter Client",
     },
+    tweet: "Tweet",
   },
 };

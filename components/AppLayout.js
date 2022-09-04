@@ -1,4 +1,4 @@
-import { Spin } from "antd";
+import { Button, Spin } from "antd";
 import { TwitterOutlined } from "@ant-design/icons";
 import NavBar from "./NavBar";
 
@@ -13,7 +13,7 @@ import { useAppLayout } from "../assets/hooks/useAppLayout";
 export default function AppLayout({ children }) {
   const { status } = useSession();
   const { t } = useTranslation();
-  const { onMoreClick } = useAppLayout();
+  const { onMoreClick, onTweetButtonClick } = useAppLayout();
 
   return (
     <div className={styles.layout}>
@@ -23,6 +23,15 @@ export default function AppLayout({ children }) {
           <header className={styles.left}>
             <TwitterOutlined className={styles.logo} />
             <NavBar onMoreClick={onMoreClick} />
+            <Button
+              className={styles.twtBtn}
+              shape="round"
+              size="large"
+              type="primary"
+              onClick={onTweetButtonClick}
+            >
+              {t("tweet")}
+            </Button>
           </header>
           <main className={styles.main}>{children}</main>
           <aside className={styles.right}>right</aside>
