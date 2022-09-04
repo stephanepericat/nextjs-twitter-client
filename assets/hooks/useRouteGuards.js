@@ -7,7 +7,12 @@ export const useRouteGuards = (router) => {
     }
   };
 
+  const redirectToLogout = () => {
+    router.push("/api/auth/signout");
+  };
+
   return {
     redirectToLogin,
+    redirectToLogout,
   };
 };

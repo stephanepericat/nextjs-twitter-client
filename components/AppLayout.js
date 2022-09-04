@@ -1,6 +1,7 @@
 import { Button, Spin } from "antd";
 import { TwitterOutlined } from "@ant-design/icons";
 import NavBar from "./NavBar";
+import ProfileBox from "./ProfileBox";
 
 import styles from "../styles/AppLayout.module.scss";
 
@@ -12,8 +13,8 @@ import { useAppLayout } from "../assets/hooks/useAppLayout";
 
 const AppLayout = ({ children }) => {
   const router = useRouter();
-  const { status } = useSession();
-  const { redirectToLogin } = useRouteGuards(router);
+  const { data: session, status } = useSession();
+  const { redirectToLogin, redirectToLogout } = useRouteGuards(router);
 
   redirectToLogin(status);
 
@@ -38,6 +39,15 @@ const AppLayout = ({ children }) => {
             >
               {t("tweet")}
             </Button>
+            <div className={styles.spacer}></div>
+            <ProfileBox
+              className={styles.userBox}
+              displayName={session.user.name}
+              icon={session.user.image}
+              logoutLabel={t("signOut")}
+              onLogoutClick={redirectToLogout}
+              userName="@foobar"
+            />
           </header>
           <main className={styles.main}>{children}</main>
           <aside className={styles.right}>right</aside>

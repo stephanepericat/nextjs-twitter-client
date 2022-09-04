@@ -13,4 +13,15 @@ describe("Hooks > useRouteGuards", () => {
       expect(push).toHaveBeenCalledWith("/api/auth/signin");
     });
   });
+
+  describe("redirectToLogout", () => {
+    it("should redirect to the logout page", () => {
+      const push = jest.fn();
+      const { redirectToLogout } = useRouteGuards({ push });
+
+      redirectToLogout();
+
+      expect(push).toHaveBeenCalledWith("/api/auth/signout");
+    });
+  });
 });

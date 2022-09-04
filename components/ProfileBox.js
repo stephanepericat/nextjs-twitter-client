@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import styles from "../styles/ProfileBox.module.scss";
 
 const ProfileBox = ({
+  className,
   displayName,
   icon,
   logoutLabel,
@@ -20,7 +21,7 @@ const ProfileBox = ({
 
   return (
     <Popover content={content} placement="top" title={userName} trigger="click">
-      <button className={styles.profileBox}>
+      <button className={`${styles.profileBox} ${className}`}>
         <img
           className={styles.icon}
           alt={t("userIcon")}

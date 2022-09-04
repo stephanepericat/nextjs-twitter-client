@@ -24,12 +24,24 @@
 }
 
 .left {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding-right: 24px;
   width: 20%;
 }
 
 .twtBtn {
   margin-top: 16px;
-  width: calc(100% - 24px);
+  width: 100%;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.userBox {
+  margin: 10px 0;
 }
 
 .main {
