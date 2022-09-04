@@ -8,7 +8,7 @@ import { Spin } from "antd";
 import { useTranslation } from "react-i18next";
 import { useTwitterApi } from "../assets/hooks/useTwitterApi";
 
-// import styles from "../styles/Home.module.scss";
+import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   const [timeline, setTimeline] = useState(null);
@@ -16,7 +16,9 @@ export default function Home() {
   const { t } = useTranslation();
   const { getTimeline } = useTwitterApi(axios);
 
-  const pageTitle = `${t("home")} / ${t("title.default")}`;
+  const pageTitle = isLoading
+    ? `${t("loading")}...`
+    : `${t("home")} / ${t("title.default")}`;
 
   useEffect(() => {
     getTimeline()
@@ -27,17 +29,22 @@ export default function Home() {
   }, []);
 
   if (isLoading) {
-    return <Spin />;
+    return (
+      <div className={styles.home_centered}>
+        <PageHead title={pageTitle} description={t("appDescription")} />
+        <Spin />
+      </div>
+    );
   }
 
   return (
-    <>
+    <div className={styles.home}>
       <PageHead title={pageTitle} description={t("appDescription")} />
       <ul>
         {timeline.data.map((tweet) => (
           <li key={tweet.id}>{tweet.text}</li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

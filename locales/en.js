@@ -3,6 +3,7 @@ export default {
     appDescription: "A Twitter web client built with Next.js and Ant Design.",
     explore: "Explore",
     home: "Home",
+    loading: "Loading",
     messages: "Messages",
     more: "More",
     notifications: "Notifications",
