@@ -19,10 +19,20 @@
 }
 
 .userInfo {
+  width: calc(100% - 90px);
   margin-left: 10px;
 }
 
 .displayName,
 .userName {
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.more {
+  display: inline-flex;
+  font-size: 24px;
+  align-items: center;
 }

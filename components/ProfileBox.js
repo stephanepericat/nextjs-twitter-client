@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 
+import { MoreOutlined } from "@ant-design/icons";
+
 import styles from "../styles/ProfileBox.module.scss";
 
 const ProfileBox = ({ displayName, icon, userName }) => {
@@ -10,6 +12,7 @@ const ProfileBox = ({ displayName, icon, userName }) => {
         <h3 className={styles.displayName}>{displayName}</h3>
         <h4 className={styles.userName}>{userName}</h4>
       </div>
+      <MoreOutlined className={styles.more} />
     </div>
   );
 };
