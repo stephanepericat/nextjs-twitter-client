@@ -17,25 +17,46 @@ const NavBar = ({ onLinkClick, onMoreClick }) => {
 
   return (
     <nav className={styles.navbar}>
-      <a className={styles.navlink} onClick={() => onLinkClick("/")}>
+      <a
+        className={styles.navlink}
+        data-test-id="home-link"
+        onClick={() => onLinkClick("/")}
+      >
         <HomeOutlined /> {t("home")}
       </a>
-      <a className={styles.navlink} onClick={() => onLinkClick("/explore")}>
+      <a
+        className={styles.navlink}
+        data-test-id="explore-link"
+        onClick={() => onLinkClick("/explore")}
+      >
         <NumberOutlined /> {t("explore")}
       </a>
       <a
         className={styles.navlink}
+        data-test-id="notifications-link"
         onClick={() => onLinkClick("/notifications")}
       >
         <BellOutlined /> {t("notifications")}
       </a>
-      <a className={styles.navlink} onClick={() => onLinkClick("/messages")}>
+      <a
+        className={styles.navlink}
+        data-test-id="messages-link"
+        onClick={() => onLinkClick("/messages")}
+      >
         <MailOutlined /> {t("messages")}
       </a>
-      <a className={styles.navlink} onClick={() => onLinkClick("/profile")}>
+      <a
+        className={styles.navlink}
+        data-test-id="profile-link"
+        onClick={() => onLinkClick("/profile")}
+      >
         <UserOutlined /> {t("profile")}
       </a>
-      <a className={styles.navlink} onClick={onMoreClick}>
+      <a
+        className={styles.navlink}
+        data-test-id="more-link"
+        onClick={onMoreClick}
+      >
         <PlusCircleOutlined /> {t("more")}
       </a>
     </nav>
