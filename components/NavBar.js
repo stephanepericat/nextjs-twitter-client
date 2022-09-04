@@ -35,7 +35,7 @@ const NavBar = ({ onLinkClick, onMoreClick }) => {
       <a className={styles.navlink} onClick={() => onLinkClick("/profile")}>
         <UserOutlined /> {t("profile")}
       </a>
-      <a className={styles.navlink} onClick={() => onMoreClick()}>
+      <a className={styles.navlink} onClick={onMoreClick}>
         <PlusCircleOutlined /> {t("more")}
       </a>
     </nav>
