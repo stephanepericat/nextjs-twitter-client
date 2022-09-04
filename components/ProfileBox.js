@@ -7,13 +7,19 @@ import { useTranslation } from "react-i18next";
 
 import styles from "../styles/ProfileBox.module.scss";
 
-const ProfileBox = ({ displayName, icon, userName }) => {
+const ProfileBox = ({
+  displayName,
+  icon,
+  logoutLabel,
+  onLogoutClick,
+  userName,
+}) => {
   const { t } = useTranslation();
 
-  const content = <div>content</div>;
+  const content = <a onClick={onLogoutClick}>{logoutLabel}</a>;
 
   return (
-    <Popover content={content} placement="top" title="Foobar" trigger="click">
+    <Popover content={content} placement="top" title={userName} trigger="click">
       <button className={styles.profileBox}>
         <img
           className={styles.icon}
@@ -35,6 +41,8 @@ const ProfileBox = ({ displayName, icon, userName }) => {
 ProfileBox.propTypes = {
   displayName: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
+  logoutLabel: PropTypes.string.isRequired,
+  onLogoutClick: PropTypes.func.isRequired,
   userName: PropTypes.string.isRequired,
 };
 

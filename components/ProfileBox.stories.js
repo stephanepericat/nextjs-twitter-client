@@ -31,5 +31,6 @@ export const Primary = Template.bind({});
 Primary.args = {
   displayName: "Mr. Kitten",
   icon: "https://placekitten.com/50/50",
+  logoutLabel: "Sign Out",
   userName: "@mrkitten312",
 };
