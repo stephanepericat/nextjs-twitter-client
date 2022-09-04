@@ -20,6 +20,7 @@ const customJestConfig = {
     "<rootDir>/components/*.{js,jsx}",
     "<rootDir>/pages/**/*.{js,jsx}",
     "<rootDir>/assets/**/*.{js,jsx}",
+    "!<rootDir>/assets/constants/*.{js,jsx}",
     "!<rootDir>/pages/_app.js",
     "!<rootDir>/pages/api/auth/*.{js,jsx}",
     "!**/node_modules/**",
