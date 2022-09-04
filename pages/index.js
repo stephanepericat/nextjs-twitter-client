@@ -1,28 +1,43 @@
-// import { useState } from "react";
-// import axios from "axios";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 import PageHead from "../components/PageHead";
 
+import { Spin } from "antd";
+
 import { useTranslation } from "react-i18next";
-// import { useTwitterApi } from "../assets/hooks/useTwitterApi";
+import { useTwitterApi } from "../assets/hooks/useTwitterApi";
 
 // import styles from "../styles/Home.module.scss";
 
 export default function Home() {
-  // const [timeline, setTimeline] = useState();
+  const [timeline, setTimeline] = useState(null);
+  const [isLoading, setLoading] = useState(true);
   const { t } = useTranslation();
-  const pageTitle = `${t("home")} / ${t("title.default")}`;
-  // const { getTimeline } = useTwitterApi(axios);
+  const { getTimeline } = useTwitterApi(axios);
 
-  // getTimeline().then(({ data }) => {
-  //   console.log("timeline", data);
-  //   setTimeline(data);
-  // });
+  const pageTitle = `${t("home")} / ${t("title.default")}`;
+
+  useEffect(() => {
+    getTimeline()
+      .then((res) => {
+        setTimeline(res);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (isLoading) {
+    return <Spin />;
+  }
 
   return (
     <>
       <PageHead title={pageTitle} description={t("appDescription")} />
-      <p>HOME PAGE</p>
+      <ul>
+        {timeline.data.map((tweet) => (
+          <li key={tweet.id}>{tweet.text}</li>
+        ))}
+      </ul>
     </>
   );
 }
