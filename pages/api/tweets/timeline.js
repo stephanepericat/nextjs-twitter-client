@@ -76,9 +76,8 @@ export default async (req, res) => {
         params: {
           expansions: expansions.join(),
           "media.fields": mediaFields.join(),
-          // TODO: user later...
-          // "place.fields": placeFields.join(),
-          // "poll.fields": pollFields.join(),
+          "place.fields": placeFields.join(),
+          "poll.fields": pollFields.join(),
           "tweet.fields": tweetFields.join(),
           "user.fields": userField.join(),
         },
