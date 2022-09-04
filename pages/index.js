@@ -6,10 +6,11 @@ import { useTranslation } from "react-i18next";
 
 export default function Home() {
   const { t } = useTranslation();
+  const pageTitle = `${t("home")} / ${t("title.default")}`;
 
   return (
     <>
-      <PageHead title={t("title.default")} description={t("appDescription")} />
+      <PageHead title={pageTitle} description={t("appDescription")} />
       <p>HOME PAGE</p>
     </>
   );
