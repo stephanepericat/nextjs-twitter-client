@@ -13,5 +13,6 @@ export default {
       default: "Next.js Twitter Client",
     },
     tweet: "Tweet",
+    userIcon: "User Icon",
   },
 };

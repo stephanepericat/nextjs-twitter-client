@@ -1,6 +1,8 @@
 @import "./variables";
 
 .profileBox {
+  background-color: transparent;
+  border: none;
   border-radius: 60px;
   display: flex;
   height: 60px;
@@ -21,6 +23,7 @@
 .userInfo {
   width: calc(100% - 90px);
   margin-left: 10px;
+  text-align: left;
 }
 
 .displayName,
