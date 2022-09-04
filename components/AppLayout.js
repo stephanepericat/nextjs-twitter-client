@@ -9,16 +9,13 @@ import styles from "../styles/AppLayout.module.scss";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 import { useTranslation } from "react-i18next";
-
-import consola from "consola";
+import { useNavBar } from "../assets/hooks/useNavBar";
 
 export default function AppLayout({ children }) {
   const { status } = useSession();
   const { t } = useTranslation();
   const router = useRouter();
-
-  const onLinkClick = (href) => router.push(href);
-  const onMoreClick = (e) => consola.log("onMoreClick", e);
+  const { onLinkClick, onMoreClick } = useNavBar(router);
 
   return (
     <div className={styles.layout}>
