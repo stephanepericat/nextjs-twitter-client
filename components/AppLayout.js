@@ -42,11 +42,11 @@ const AppLayout = ({ children }) => {
             <div className={styles.spacer}></div>
             <ProfileBox
               className={styles.userBox}
-              displayName={session.user.name}
-              icon={session.user.image}
+              displayName={session?.user?.name}
+              icon={session?.user?.image}
               logoutLabel={t("signOut")}
               onLogoutClick={redirectToLogout}
-              userName="@foobar"
+              userName={`@${session?.user?.username}`}
             />
           </header>
           <main className={styles.main}>{children}</main>
