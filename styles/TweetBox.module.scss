@@ -1,0 +1,31 @@
+@import "./variables";
+
+.tweetBox {
+  border-bottom: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+}
+
+.user {
+  margin: 10px 0 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.displayName {
+  font-weight: 600;
+}
+
+.userName {
+  color: #666;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.actions {
+  display: flex;
+  font-size: 16px;
+  justify-content: space-evenly;
+  margin-bottom: 16px;
+}
