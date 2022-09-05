@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import PageHead from "../components/PageHead";
-
 import { Spin } from "antd";
+import TweetBox from "../components/TweetBox";
 
 import { useTranslation } from "react-i18next";
 import { useTwitterApi } from "../assets/hooks/useTwitterApi";
@@ -40,11 +40,20 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <PageHead title={pageTitle} description={t("appDescription")} />
-      <ul>
-        {timeline.data.map((tweet) => (
-          <li key={tweet.id}>{tweet.text}</li>
-        ))}
-      </ul>
+      {timeline.data.map((tweet) => {
+        const user =
+          timeline?.includes?.users?.find(({ id }) => id === tweet.author_id) ||
+          {};
+
+        return (
+          <TweetBox
+            key={tweet.id}
+            displayName={user.name}
+            text={tweet.text}
+            userName={user.username}
+          />
+        );
+      })}
     </div>
   );
 }

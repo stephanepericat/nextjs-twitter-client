@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
 import {
-  CommentOutlined,
-  HeartFilled,
+  // HeartFilled,
   HeartOutlined,
+  MessageOutlined,
   RetweetOutlined,
   UploadOutlined,
 } from "@ant-design/icons";
@@ -19,7 +19,7 @@ const TweetBox = ({ displayName, text, userName }) => {
       </h3>
       <p>{text}</p>
       <div className={styles.actions}>
-        <CommentOutlined />
+        <MessageOutlined />
         <RetweetOutlined />
         <HeartOutlined />
         <UploadOutlined />
